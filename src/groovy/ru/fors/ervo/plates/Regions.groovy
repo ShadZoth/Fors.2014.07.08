@@ -19,7 +19,7 @@ class Regions {
      */
     private Regions() {
         regions = new JsonSlurper().parseText(GroovyUtil
-                .readAllLinesToOneLine("json.txt"))
+                .readText("json.txt"))
     }
 
     /**

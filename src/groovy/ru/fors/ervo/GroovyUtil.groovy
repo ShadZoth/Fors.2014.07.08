@@ -19,18 +19,9 @@ class GroovyUtil {
     /**
      * Reads text from the file
      * @param path Path to file
-     * @return Text from file in one line
+     * @return Text from file
      */
-    static String readAllLinesToOneLine(String path) {
-        def file = new File(path)
-        def fin = new FileInputStream(file)
-        def sin = new Scanner(fin)
-        def res = ""
-        while (sin.hasNext()) {
-            res = res + sin.nextLine()
-        }
-        sin.close()
-        fin.close()
-        res
+    static String readText(String path) {
+        new FileReader(path).withReader { it.text }
     }
 }

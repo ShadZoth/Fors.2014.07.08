@@ -9,7 +9,7 @@ import ru.fors.ervo.GroovyUtil
  * @since 08.07.2014
  */
 
-String info = GroovyUtil.readAllLinesToOneLine("users.txt")
+String info = GroovyUtil.readText("users.txt")
 new JsonSlurper().parseText(info).each {
     println "Person"
     println "\tName"
