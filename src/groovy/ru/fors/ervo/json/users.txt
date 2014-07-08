@@ -1,0 +1,1 @@
+[{"cars":[{"type":"NORMAL","valid":true,"plate":"C065MK|78"},{"type":"TAXI","valid":true,"plate":"AO365|78"}],"name":"Ivanov"},{"cars":[{"type":"TRAILER","valid":true,"plate":"AH7331|47"},{"type":"MOTO","valid":true,"plate":"8776|AE|64"}],"name":"Petrov"},{"cars":[{"type":"AGRO","valid":true,"plate":"3733MM|55"}],"name":"Sidorov"},{"cars":[],"name":"Ololloev"}]
