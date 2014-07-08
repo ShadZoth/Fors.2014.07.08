@@ -12,58 +12,22 @@ class LicencePlate {
     /**
      * Text on the plate
      */
-    String plate
+    final String plate
 
     /**
      * Type of vehicle
      */
-    Types type
+    final Types type
 
     /**
      * Region of registration
      */
-    int region
+    final int region
 
     /**
      * Valid sign
      */
-    boolean valid
-
-    /**
-     * Stub
-     * @param plate
-     */
-    void setPlate(String plate) {
-        def name = "Plate"
-        throw new IllegalAccessException("$name is immutable")
-    }
-
-    /**
-     * Stub
-     * @param transit
-     */
-    void setTransit(boolean transit) {
-        def name = "Transit"
-        throw new IllegalAccessException("$name is immutable")
-    }
-
-    /**
-     * Stub
-     * @param region
-     */
-    void setRegion(int region) {
-        def name = "Region"
-        throw new IllegalAccessException("$name is immutable")
-    }
-
-    /**
-     * Stub
-     * @param valid
-     */
-    void setValid(boolean valid) {
-        def name = "Valid"
-        throw new IllegalAccessException("$name is immutable")
-    }
+    final boolean valid
 
     /**
      * Gets region
@@ -84,6 +48,7 @@ class LicencePlate {
     LicencePlate(String plate) {
         plate = plate.toUpperCase()
         this.plate = plate
+        def (rvalid, rregion, rtype) = [false, 0, null]
         for (def type : Types.values()) {
             def regexp = type.regex
             def (valid, region) = [false, 0]
@@ -92,10 +57,13 @@ class LicencePlate {
                 region = Integer.parseInt(_region)
             }
             if (valid) {
-                this.valid = valid
-                this.region = region
-                this.type = type
+                rvalid = valid
+                rregion = region
+                rtype = type
             }
         }
+        this.valid = rvalid
+        this.region = rregion
+        this.type = rtype
     }
 }
